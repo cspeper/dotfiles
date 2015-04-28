@@ -22,6 +22,7 @@ export HISTFILESIZE=5000
 alias editaliases="vim ~/.bash_profile && reload"
 alias fixdb="rake db:fix"
 alias gitprune="git remote prune origin && git prune"
+alias gitdelete="git branch --merged | grep -v '\*' | xargs -n 1 git branch -d"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx

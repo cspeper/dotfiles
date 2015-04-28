@@ -25,3 +25,10 @@
 	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+[user]
+	name = Scott Peper
+	email = scott@gethightower.com
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
