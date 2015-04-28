@@ -48,3 +48,5 @@ fi
 if [ -f ~/.bash_profile.local ]; then
   . ~/.bash_profile.local
 fi
+
+export PATH=/usr/local/heroku/bin:$PATH
