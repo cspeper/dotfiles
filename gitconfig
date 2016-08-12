@@ -15,6 +15,7 @@
   path = ~/.gitconfig.local
 [core]
   editor = vim
+	excludesfile = /Users/scott/.gitignore_global
 [color]
   ui = true
 [diff]
@@ -27,8 +28,14 @@
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 [user]
 	name = Scott Peper
-	email = scott@gethightower.com
+	email = scott.peper@gethightower.com
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
