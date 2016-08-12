@@ -1,6 +1,7 @@
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
+source ~/.profile
 export -f parse_git_branch
 
 run_loop() {
@@ -52,3 +53,32 @@ if [ -f ~/.bash_profile.local ]; then
 fi
 
 export PATH=/usr/local/heroku/bin:$PATH
+
+set_color() {
+   local R=$1
+   local G=$2
+   local B=$3
+   /usr/bin/osascript <<EOF
+tell application "iTerm"
+   tell current session of current window
+      set background color to {$(($R*65535/255)), $(($G*65535/255)), $(($B*65535/255))}
+   end tell
+end tell
+EOF
+}
+
+reset_colors() {
+  set_color 0 0 0
+}
+
+heroku(){
+  if [[ "$@" =~ 'hightower-prod' ]]; then
+    set_color 64 0 0
+  fi
+  if [[ "$@" =~ '(integrations-sandbox|hightower-training)' ]]; then
+    set_color 64 64 0
+  fi
+
+  /usr/local/heroku/bin/heroku "$@"
+  reset_colors
+}
