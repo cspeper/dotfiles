@@ -34,6 +34,9 @@ Bundle 'vim-scripts/gitignore'
 Bundle 'vim-scripts/nextval'
 Bundle 'vim-scripts/regreplop.vim'
 Bundle 'wincent/Command-T'
+Bundle 'Valloric/YouCompleteMe'
+Bundle '1995eaton/vim-better-javascript-completion'
+
 
 let mapleader = ","
 
@@ -58,7 +61,7 @@ au FocusLost * silent! wa
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
-colorscheme solarized
+colorscheme Tomorrow-Night-Eighties
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufReadPost .git/index set nolist
@@ -127,6 +130,10 @@ set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 
 set sessionoptions-=options
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 set hls                            " search with highlights by default
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
@@ -139,6 +146,14 @@ endif
 
 let g:CommandTWildIgnore=&wildignore . ",node_modules/**/*"
 let g:CommandTMaxHeight=10
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_warning_symbol = '🌀'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8 " Necessary to show unicode glyphs
