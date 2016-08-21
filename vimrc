@@ -5,7 +5,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'Peeja/vim-cdo'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
@@ -13,10 +13,12 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'jgdavey/vim-blockle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
+Bundle 'mkitt/tabline.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-endwise'
@@ -28,10 +30,13 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/gitignore'
 Bundle 'vim-scripts/nextval'
 Bundle 'vim-scripts/regreplop.vim'
 Bundle 'wincent/Command-T'
 Bundle 'junegunn/vim-emoji'
+Bundle 'Valloric/YouCompleteMe'
+Bundle '1995eaton/vim-better-javascript-completion'
 
 let mapleader = ","
 
@@ -56,7 +61,7 @@ au FocusLost * silent! wa
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
-colorscheme solarized
+colorscheme Tomorrow-Night-Eighties
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufReadPost .git/index set nolist
@@ -79,7 +84,7 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-set guifont=Menlo:h16
+set guifont=Menlo\ for\ Powerline:h16
 set guioptions-=T                  " Remove GUI toolbar
 set guioptions-=e                  " Use text tab bar, not GUI
 set guioptions-=rL                 " Remove scrollbars
@@ -125,6 +130,10 @@ set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 
 set sessionoptions-=options
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 set hls                            " search with highlights by default
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
@@ -135,60 +144,22 @@ if $TERM == 'screen-256color'
   set t_RV=[>c
 endif
 
-let g:CommandTWildIgnore=&wildignore . ",app/assets/images/paperclip/**/*,node_modules/**/*"
+let g:CommandTWildIgnore=&wildignore . ",node_modules/**/*"
 let g:CommandTMaxHeight=10
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_warning_symbol = '🌀'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8 " Necessary to show unicode glyphs
 
 autocmd FileType javascript let b:surround_36 = "$(\r)"
                         \ | let b:surround_95 = "_(\r)"
-
-" Rename tabs to show tab number.
-" (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
-if exists("+showtabline")
-    function! MyTabLine()
-        let s = ''
-        let wn = ''
-        let t = tabpagenr()
-        let i = 1
-        while i <= tabpagenr('$')
-            let buflist = tabpagebuflist(i)
-            let winnr = tabpagewinnr(i)
-            let s .= '%' . i . 'T'
-            let s .= (i == t ? '%1*' : '%2*')
-            let s .= ' '
-            let wn = tabpagewinnr(i,'$')
-
-            let s .= '%#TabNum#'
-            let s .= i
-            " let s .= '%*'
-            let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-            let bufnr = buflist[winnr - 1]
-            let file = bufname(bufnr)
-            let buftype = getbufvar(bufnr, 'buftype')
-            if buftype == 'nofile'
-                if file =~ '\/.'
-                    let file = substitute(file, '.*\/\ze.', '', '')
-                endif
-            else
-                let file = fnamemodify(file, ':p:t')
-            endif
-            if file == ''
-                let file = '[No Name]'
-            endif
-            let s .= ' ' . file . ' '
-            let i = i + 1
-        endwhile
-        let s .= '%T%#TabLineFill#%='
-        let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
-        return s
-    endfunction
-    set stal=2
-    set tabline=%!MyTabLine()
-    set showtabline=1
-    highlight link TabNum Special
-endif
 
 let ruby_operators=1
 
@@ -214,3 +185,18 @@ if filereadable(ignorefile)
 
   let g:fuf_coveragefile_exclude = ignore
 endif
+let g:ackprg = 'ag --vimgrep'
+
+let g:rails_projections = {
+  \ "frontend/javascripts/app/*.js": {
+  \   "alternate": "spec/javascripts/{}_spec.js"
+  \ },
+  \ "spec/javascripts/*_spec.js": {
+  \   "alternate": "frontend/javascripts/app/{}.js"
+  \},
+  \ "frontend/javascripts/app/*.coffee": {
+  \   "alternate": "spec/javascripts/{}_spec.coffee"
+  \ },
+  \ "spec/javascripts/*_spec.coffee": {
+  \   "alternate": "frontend/javascripts/app/{}.coffee"
+  \}}

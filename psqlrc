@@ -1,2 +1,0 @@
-CREATE OR REPLACE FUNCTION pg_temp.pg_audit_log_user_identifier() RETURNS integer AS 'SELECT -1' LANGUAGE SQL STABLE;
-CREATE OR REPLACE FUNCTION pg_temp.pg_audit_log_user_unique_name() RETURNS varchar AS $_$ SELECT 'UNKNOWN'::varchar $_$ LANGUAGE SQL STABLE;
