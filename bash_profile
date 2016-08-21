@@ -12,6 +12,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+source ~/.profile
+
 export CLICOLOR=1
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -28,6 +30,8 @@ alias gtx=gitx
 alias gut=git
 alias heroky=heroku
 alias ht="cd ~/workspace/hightower"
+alias rye="cd ~/RailsProjects/RyeCatcher"
+alias qtb="cd ~/RailsProjects/QTalkblocks"
 alias ll="ls -al"
 alias loopy=run_loop
 alias reload=". ~/.bash_profile"
