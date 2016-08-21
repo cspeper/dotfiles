@@ -40,6 +40,7 @@ alias gtx=gitx
 alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
+alias reload=". ~/.bash_profile"
 alias shutupvim="rm /var/tmp/*.swp"
 alias sails="spring rails"
 alias sspec="spring rspec"
@@ -59,3 +60,4 @@ export GPG_TTY=$(tty)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GPG_TTY=$(tty)

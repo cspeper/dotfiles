@@ -33,7 +33,7 @@
 [init]
   templatedir = ~/.git_template
 [commit]
-  gpgsign = true
+  gpgsign = false
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
