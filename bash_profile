@@ -1,6 +1,7 @@
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
+source ~/.profile
 export -f parse_git_branch
 
 loopy() {
@@ -34,6 +35,10 @@ alias dododo="gpr && docker/run \"bundle && spring stop && spring rails db:migra
 alias fixit="git add . -A && git commit --amend -CHEAD"
 alias fixstructure="git reset db/structure.sql && sails db:migrate db:test:prepare && git add db/structure.sql && git rebase --continue"
 alias gogogo="gpr && bundle && spring stop && sails db:migrate db:test:prepare"
+alias editaliases="vim ~/.bash_profile && reload"
+alias fixdb="rake db:fix"
+alias gitprune="git remote prune origin && git prune"
+alias gitdelete="git branch --merged | grep -v '\*' | xargs -n 1 git branch -d"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx
@@ -41,6 +46,7 @@ alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
 alias reload=". ~/.bash_profile"
+alias server="foreman start -f Procfile.dev"
 alias shutupvim="rm /var/tmp/*.swp"
 alias sails="spring rails"
 alias sspec="spring rspec"
