@@ -31,6 +31,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/nextval'
 Bundle 'vim-scripts/regreplop.vim'
 Bundle 'wincent/Command-T'
+Bundle 'junegunn/vim-emoji'
 
 let mapleader = ","
 
@@ -96,7 +97,7 @@ set shiftwidth=2                   " Width of autoindent
 set number                         " Line numbers
 set nowrap                         " No wrapping
 set backspace=indent,eol,start     " Let backspace work over anything.
-set wildignore+=tags,tmp/**        " Ignore tags when globbing.
+set wildignore+=tags,tmp/**,public/system/**        " Ignore tags when globbing.
 
 set list                           " Show whitespace
 set listchars=trail:·
@@ -199,3 +200,17 @@ runtime macros/matchit.vim
 
 highlight clear SignColumn
 call gitgutter#highlight#define_highlights()
+
+"FuzzyFinder should ignore all files in .gitignore
+let ignorefile = ".gitignore"
+if filereadable(ignorefile)
+
+  let ignore = '\v\~$'
+  for line in readfile(ignorefile)
+    let line = substitute(line, '\.', '\\.', 'g')
+    let line = substitute(line, '\*', '.*', 'g')
+    let ignore .= '|^' . line
+  endfor
+
+  let g:fuf_coveragefile_exclude = ignore
+endif
