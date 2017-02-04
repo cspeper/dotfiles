@@ -12,8 +12,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-export PATH=/usr/local/bin/:$PATH:$HOME/Applications/Firefox.app/Contents/MacOS
-
 export CLICOLOR=1
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -22,22 +20,16 @@ export HISTCONTROL=ignoredups
 export HISTFILESIZE=5000
 
 alias editaliases="vim ~/.bash_profile && reload"
-alias esl="node node_modules/eslint/bin/eslint.js"
-alias fixdb="rake db:fix"
 alias gitprune="git remote prune origin && git prune"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx
 alias gut=git
 alias heroky=heroku
-alias ht="cd ~/workspace/hightower"
 alias ll="ls -alh"
 alias loopy=run_loop
 alias reload=". ~/.bash_profile"
-alias server="foreman start -f Procfile.dev"
 alias shutupvim="rm /var/tmp/*.swp"
-alias vts="cd ~/workspace/viewthespace"
-alias wp="./node_modules/.bin/webpack-dev-server --config config/webpack/development.config.js --content-base frontend --host 0.0.0.0"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
