@@ -1,5 +1,5 @@
 ```
-$ brew install ag macvim
+$ brew install ag macvim bash-completion
 $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 $ git clone https://github.com/BrentWheeldon/dotfiles
 $ ln -sf {`pwd`/dotfiles/,~/.}bash_profile
