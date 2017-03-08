@@ -40,5 +40,3 @@ fi
 if [ -f ~/.bash_profile.local ]; then
   . ~/.bash_profile.local
 fi
-
-source /usr/local/git/contrib/completion/git-completion.bash
