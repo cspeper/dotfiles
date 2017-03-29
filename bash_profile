@@ -21,6 +21,7 @@ export HISTFILESIZE=5000
 
 alias editaliases="vim ~/.bash_profile && reload"
 alias gitprune="git remote prune origin && git prune"
+alias gogogo="gpr && bundle && rake db:migrate db:test:prepare"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx
