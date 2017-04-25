@@ -9,7 +9,7 @@ $ ln -s {`pwd`/dotfiles/,~/.}inputrc
 $ ln -s {`pwd`/dotfiles/,~/.}vimrc
 $ ln -s {`pwd`/dotfiles/,~/.}gemrc
 $ ln -s {`pwd`/dotfiles/,~/.}psqlrc
-$ vim -c "BundleInstall" -c "qa"
+$ vim -c "PluginInstall" -c "qa"
 $ cd ~/.vim/bundle/command-t/ruby/command-t
 $ make clean
 $ /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
