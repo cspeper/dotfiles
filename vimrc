@@ -162,21 +162,6 @@ call gitgutter#highlight#define_highlights()
 
 let g:ackprg = 'ag --vimgrep'
 
-let g:rails_projections = {
-  \ "frontend/javascripts/app/*.js": {
-  \   "alternate": "spec/javascripts/{}_spec.js"
-  \ },
-  \ "spec/javascripts/*_spec.js": {
-  \   "alternate": "frontend/javascripts/app/{}.js"
-  \},
-  \ "frontend/javascripts/app/*.coffee": {
-  \   "alternate": "spec/javascripts/{}_spec.coffee"
-  \ },
-  \ "spec/javascripts/*_spec.coffee": {
-  \   "alternate": "frontend/javascripts/app/{}.coffee"
-  \}}
-
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " Define a command to make it easier to use
 command! -nargs=+ QFDo call QFDo(<q-args>)
