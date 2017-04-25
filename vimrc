@@ -162,6 +162,8 @@ call gitgutter#highlight#define_highlights()
 
 let g:ackprg = 'ag --vimgrep'
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Define a command to make it easier to use
 command! -nargs=+ QFDo call QFDo(<q-args>)
