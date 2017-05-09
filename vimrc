@@ -15,6 +15,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'ngmy/vim-rubocop'
 Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rking/ag.vim'
@@ -67,6 +68,9 @@ set vb    " Silence audio notifications
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufReadPost .git/index set nolist
+
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
 
 let g:gundo_close_on_revert = 1
 
