@@ -16,6 +16,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rking/ag.vim'
@@ -34,6 +35,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/gitignore'
+Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
 Plugin 'wincent/Command-T'
@@ -59,6 +61,7 @@ map Y yg_
 
 au FocusLost * silent! wa
 
+let python_highlight_all=1
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
@@ -156,6 +159,8 @@ autocmd FileType javascript let b:surround_36 = "$(\r)"
                         \ | let b:surround_95 = "_(\r)"
 
 let ruby_operators=1
+
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
