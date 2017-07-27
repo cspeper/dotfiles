@@ -6,6 +6,8 @@
   up = !git fetch origin && git rebase origin/master
   tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
   ctags = !.git/hooks/ctags
+[fetch]
+  prune = true
 [format]
   pretty = format:%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s
 [log]
