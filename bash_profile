@@ -13,6 +13,7 @@ fi
 
 export CLICOLOR=1
 export EDITOR=mvim
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=5000
 export LSCOLORS=ExFxCxDxBxegedabagacad
