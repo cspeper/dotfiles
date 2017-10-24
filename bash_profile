@@ -4,7 +4,6 @@ parse_git_branch() {
 export -f parse_git_branch
 
 run_loop() {
-  trap "exit" INT
   for i in {1..10}; do $1; done
 }
 
