@@ -18,6 +18,7 @@
   path = ~/.gitconfig.local
 [core]
   editor = vim
+	excludesfile = /Users/bwheeldon/.gitignore_global
 [color]
   ui = true
 [diff]
