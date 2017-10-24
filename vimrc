@@ -5,7 +5,6 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 
-Plugin 'Peeja/vim-cdo'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
