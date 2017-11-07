@@ -12,10 +12,7 @@ ln -s {`pwd`/dotfiles/,~/.}psqlrc
 mkdir -p ~/.git_template/hooks
 ln -s `pwd`/git_hooks/* ~/.git_template/hooks/
 vim -c "PluginInstall" -c "qa"
-cd ~/.vim/bundle/command-t/ruby/command-t
-make clean
-/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
-make
+# jump through all of the hoops to make command-t work
 ```
 
 Install the `Menlo for Powerline` font from [here](https://github.com/abertsch/Menlo-for-Powerline/blob/master/Menlo%20for%20Powerline.ttf) (just click raw, open the downloaded file, and then click "Install Font").
