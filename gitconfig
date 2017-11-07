@@ -31,3 +31,5 @@
   diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 [init]
   templatedir = ~/.git_template
+[commit]
+  gpgsign = true
