@@ -63,6 +63,18 @@ map Y           yg_
 map <MiddleMouse>   <Nop>
 map <MiddleMouse>  <Nop>
 
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 au FocusLost * silent! wa
 
 let python_highlight_all=1
