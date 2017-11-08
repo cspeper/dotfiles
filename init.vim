@@ -171,17 +171,9 @@ call gitgutter#highlight#define_highlights()
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
 
-fun! s:FindSearchTerm(txt)
-  if empty(a:txt)
-    return expand("<cword>")
-  else
-    return a:txt
-  endif
-endfun
-
 command! -bang -nargs=* Find
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(s:FindSearchTerm(<q-args>)), 1,
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(empty(<q-args>)?expand("<cword>"):<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
