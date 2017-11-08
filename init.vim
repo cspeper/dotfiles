@@ -57,6 +57,8 @@ map <leader>f   :Files<CR>
 map <leader>/   <plug>NERDCommenterToggle
 map <leader>c :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
+map <leader>ev :vsplit $MYVIMRC<cr>
+map <leader>sv :source $MYVIMRC<cr>
 map <MiddleMouse>   <Nop>
 imap <MiddleMouse>  <Nop>
 map <leader>u :GundoToggle<CR>
@@ -95,12 +97,6 @@ let NERDSpaceDelims = 1
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-
-set guifont=Menlo\ for\ Powerline:h16
-set guioptions-=T                  " Remove GUI toolbar
-set guioptions-=e                  " Use text tab bar, not GUI
-set guioptions-=rL                 " Remove scrollbars
-set guicursor=a:blinkon0           " Turn off the blinking cursor
 
 set notimeout                      " No command timeout
 set showcmd                        " Show typed command prefixes while waiting for operator
@@ -152,10 +148,6 @@ if $TERM == 'screen-256color'
   set t_RV=[>c
 endif
 
-let g:CommandTWildIgnore=&wildignore . ",node_modules/**/*,vendor/assets/components/**/*,public/**/*"
-let g:CommandTMaxHeight=10
-
-let g:Powerline_symbols = 'fancy'
 set encoding=utf-8 " Necessary to show unicode glyphs
 
 autocmd FileType javascript let b:surround_36 = "$(\r)"
@@ -177,31 +169,9 @@ call gitgutter#highlight#define_highlights()
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
 
-" Define a command to make it easier to use
-command! -nargs=+ QFDo call QFDo(<q-args>)
-
-" Function that does the work
-function! QFDo(command)
-    " Create a dictionary so that we can
-    " get the list of buffers rather than the
-    " list of lines in buffers (easy way
-    " to get unique entries)
-    let buffer_numbers = {}
-    " For each entry, use the buffer number as
-    " a dictionary key (won't get repeats)
-    for fixlist_entry in getqflist()
-        let buffer_numbers[fixlist_entry['bufnr']] = 1
-    endfor
-    " Make it into a list as it seems cleaner
-    let buffer_number_list = keys(buffer_numbers)
-
-    " For each buffer
-    for num in buffer_number_list
-        " Select the buffer
-        exe 'buffer' num
-        " Run the command that's passed as an argument
-        exe a:command
-        " Save if necessary
-        update
-    endfor
-endfunction
+command! -bang -nargs=* IceCream
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%', '?'),
+  \   <bang>0)
