@@ -10,10 +10,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/fzf'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'
 Plugin 'mkitt/tabline.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'ngmy/vim-rubocop'
@@ -172,8 +172,6 @@ runtime macros/matchit.vim
 
 highlight clear SignColumn
 call gitgutter#highlight#define_highlights()
-
-let g:ackprg = 'ag --vimgrep'
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
