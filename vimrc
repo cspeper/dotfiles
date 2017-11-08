@@ -39,7 +39,6 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
-Plugin 'wincent/Command-T'
 
 let mapleader = ","
 
@@ -50,9 +49,6 @@ cabbrev WQ wq
 
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
-map <D-N>       :CommandTFlush<CR>:CommandT<CR>
-map <leader>F   :CommandTFlush<CR>:CommandT<CR>
-map <D-M>       :CommandTTag<CR>
 map <leader>/   <plug>NERDCommenterToggle
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
