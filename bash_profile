@@ -3,7 +3,7 @@ parse_git_branch() {
 }
 export -f parse_git_branch
 
-run_loop() {
+loopy() {
   for i in {1..10}; do $1; done
 }
 
@@ -29,7 +29,6 @@ alias gtx=gitx
 alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
-alias loopy=run_loop
 alias reload=". ~/.bash_profile"
 alias shutupvim="rm /var/tmp/*.swp"
 
