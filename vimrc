@@ -1,6 +1,7 @@
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/Users/bwheeldon/.rvm/rubies/ruby-2.3.3/bin/rougify
 
 call vundle#begin()
 
