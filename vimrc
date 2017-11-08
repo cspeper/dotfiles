@@ -46,6 +46,7 @@ let mapleader = ","
 cabbrev W w
 cabbrev Q q
 cabbrev Wq wq
+cabbrev WQ wq
 
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
