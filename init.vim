@@ -11,7 +11,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'jgdavey/vim-blockle'
-Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -169,9 +168,17 @@ call gitgutter#highlight#define_highlights()
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
 
-command! -bang -nargs=* IceCream
+fun! s:FindSearchTerm(txt)
+  if empty(a:txt)
+    return expand("<cword>")
+  else
+    return a:txt
+  endif
+endfun
+
+command! -bang -nargs=* Find
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(s:FindSearchTerm(<q-args>)), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
