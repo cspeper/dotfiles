@@ -80,7 +80,6 @@ au FocusLost * silent! wa
 let python_highlight_all=1
 syntax enable
 set background=dark
-let g:solarized_termcolors = 256
 colorscheme solarized
 
 set vb    " Silence audio notifications
@@ -154,10 +153,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
 set autowriteall                   " Save when doing various buffer-switching things.
 autocmd BufLeave,FocusLost * silent! wall
-
-if $TERM == 'screen-256color'
-  set t_RV=[>c
-endif
 
 set encoding=utf-8 " Necessary to show unicode glyphs
 
