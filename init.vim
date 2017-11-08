@@ -54,14 +54,14 @@ map \|          :NERDTreeFind<CR>
 map <D-N>       :Files<CR>
 map <leader>f   :Files<CR>
 map <leader>/   <plug>NERDCommenterToggle
-map <leader>c :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
-map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
-map <leader>ev :vsplit $MYVIMRC<cr>
-map <leader>sv :source $MYVIMRC<cr>
+map <leader>c   :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
+map <leader>C   :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
+map <leader>ev  :vsplit $MYVIMRC<cr>
+map <leader>sv  :source $MYVIMRC<cr>
+map <leader>u   :GundoToggle<CR>
+map Y           yg_
 map <MiddleMouse>   <Nop>
-imap <MiddleMouse>  <Nop>
-map <leader>u :GundoToggle<CR>
-map Y yg_
+map <MiddleMouse>  <Nop>
 
 au FocusLost * silent! wa
 
