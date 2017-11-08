@@ -7,7 +7,7 @@ ln -sf {`pwd`/dotfiles/,~/.}bash_profile
 ln -s {`pwd`/dotfiles/,~/.}gitconfig
 ln -s {`pwd`/dotfiles/,~/.}inputrc
 mkdir -p ~/.config/nvim
-ln -s {`pwd`/dotfiles/,~/}init.vim
+ln -s {`pwd`/dotfiles/,~/.config/nvim/}init.vim
 ln -s {`pwd`/dotfiles/,~/.}gemrc
 ln -s {`pwd`/dotfiles/,~/.}psqlrc
 mkdir -p ~/.git_template/hooks
