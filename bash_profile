@@ -13,7 +13,8 @@ fi
 
 export CLICOLOR=1
 export EDITOR=mvim
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS='--preview="rougify -t monokai.sublime {}"'
 export GPG_TTY=$(tty)
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=5000

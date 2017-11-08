@@ -10,6 +10,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'jgdavey/vim-blockle'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'majutsushi/tagbar'
@@ -48,6 +49,8 @@ cabbrev WQ wq
 
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
+map <D-N>       :Files<CR>
+map <leader>f   :Files<CR>
 map <leader>/   <plug>NERDCommenterToggle
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
