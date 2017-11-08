@@ -168,10 +168,6 @@ let ruby_operators=1
 
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
-if filereadable(glob("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 runtime macros/matchit.vim
 
 highlight clear SignColumn
