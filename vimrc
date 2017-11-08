@@ -55,7 +55,7 @@ map \|          :NERDTreeFind<CR>
 map <D-N>       :Files<CR>
 map <leader>f   :Files<CR>
 map <leader>/   <plug>NERDCommenterToggle
-map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
+map <leader>c :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
 map <MiddleMouse>   <Nop>
 imap <MiddleMouse>  <Nop>
