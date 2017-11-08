@@ -20,7 +20,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
