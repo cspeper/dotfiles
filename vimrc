@@ -1,7 +1,8 @@
 set nocompatible
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
@@ -39,6 +40,8 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
+
+call vundle#end()
 
 let mapleader = ","
 
