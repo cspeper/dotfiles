@@ -178,3 +178,4 @@ command! -bang -nargs=* Find
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
+autocmd FileType fzf tnoremap <buffer> <ESC> <C-c>
