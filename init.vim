@@ -47,6 +47,8 @@ let mapleader = ","
 
 cabbrev W w
 cabbrev Q q
+cabbrev Wa wa
+cabbrev WA wa
 cabbrev Wq wq
 cabbrev WQ wq
 
