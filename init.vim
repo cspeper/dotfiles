@@ -80,6 +80,7 @@ au FocusLost * silent! wa
 let python_highlight_all=1
 syntax enable
 set background=dark
+let g:solarized_termcolors = 256
 colorscheme solarized
 
 set vb    " Silence audio notifications
