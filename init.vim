@@ -10,6 +10,7 @@ Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'djoshea/vim-autoread'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
