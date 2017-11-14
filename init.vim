@@ -14,6 +14,7 @@ Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'djoshea/vim-autoread'
 Plugin 'janko-m/vim-test'
 Plugin 'jgdavey/vim-blockle'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kassio/neoterm'
