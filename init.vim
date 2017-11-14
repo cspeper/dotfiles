@@ -7,13 +7,16 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'Keithbsmiley/rspec.vim', {'for': 'ruby'}
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'djoshea/vim-autoread'
+Plugin 'janko-m/vim-test'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'kassio/neoterm'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'majutsushi/tagbar'
 Plugin 'mkitt/tabline.vim'
@@ -178,3 +181,19 @@ command! -bang -nargs=* Find
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
 autocmd FileType fzf tnoremap <buffer> <ESC> <C-c>
+
+" NeoTerm
+let g:neoterm_autoinsert = 0
+let g:neoterm_autoscroll = 0
+let g:neoterm_size = 20
+let g:neoterm_fixedsize = 1
+let g:neoterm_open_in_all_tabs = 1
+
+" Vim Test
+let g:test#strategy = 'neoterm'
+
+" Ruby Tests
+let g:test#ruby#runner = 'rspec'
+let g:test#ruby#rspec#executable = 'rspec'
+let g:test#ruby#rspec#file_pattern = '_spec\.rb'
+let g:test#runner_commands = ['RSpec']
