@@ -189,6 +189,8 @@ command! -bang -nargs=* Find
   \   <bang>0)
 autocmd FileType fzf tnoremap <buffer> <ESC> <C-c>
 
+let g:rg_command = 'rg --vimgrep --sort-files'
+
 " NeoTerm
 let g:neoterm_autoinsert = 0
 let g:neoterm_autoscroll = 0
