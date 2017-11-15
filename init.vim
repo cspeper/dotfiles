@@ -69,6 +69,12 @@ map Y           yg_
 map <MiddleMouse>   <Nop>
 map <MiddleMouse>  <Nop>
 
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
@@ -195,6 +201,6 @@ let g:test#strategy = 'neoterm'
 
 " Ruby Tests
 let g:test#ruby#runner = 'rspec'
-let g:test#ruby#rspec#executable = 'rspec'
+let g:test#ruby#rspec#executable = 'spring rspec'
 let g:test#ruby#rspec#file_pattern = '_spec\.rb'
 let g:test#runner_commands = ['RSpec']
