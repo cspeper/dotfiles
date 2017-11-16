@@ -12,7 +12,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 export CLICOLOR=1
-export EDITOR=mvim
+export EDITOR=nvim
 export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_DEFAULT_OPTS='--preview="rougify -t monokai.sublime {}"'
 export GPG_TTY=$(tty)
