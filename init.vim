@@ -26,7 +26,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
@@ -179,6 +179,16 @@ highlight clear SignColumn
 call gitgutter#highlight#define_highlights()
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 
 command! -bang -nargs=* Find
