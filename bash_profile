@@ -22,7 +22,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
 
 alias gitprune="git remote prune origin && git prune"
-alias gogogo="gpr && bundle && rake db:migrate db:test:prepare"
+alias gogogo="gpr && bundle; spring stop; sails db:migrate db:test:prepare"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx
@@ -30,6 +30,8 @@ alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
 alias shutupvim="rm /var/tmp/*.swp"
+alias sails="spring rails"
+alias sspec="spring rspec"
 
 if [ -f ~/.profile ]; then
   . ~/.profile
