@@ -43,6 +43,7 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'w0rp/ale'
 
 call vundle#end()
@@ -162,7 +163,6 @@ set autoread                       " No prompt for file changes outside Vim
 set swapfile                       " Keep swapfiles
 set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-
 set sessionoptions-=options
 
 set hls                            " search with highlights by default
@@ -179,6 +179,10 @@ autocmd FileType javascript let b:surround_36 = "$(\r)"
                         \ | let b:surround_95 = "_(\r)"
 
 let ruby_operators=1
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
