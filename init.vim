@@ -122,6 +122,7 @@ let g:ale_sign_warning = '✘'
 highlight ALEWarningSign ctermfg=Blue
 
 let NERDSpaceDelims = 1
+let NERDTreeShowHidden=1
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -176,6 +177,7 @@ autocmd BufLeave,FocusLost * silent! wall
 
 set encoding=utf-8 " Necessary to show unicode glyphs
 
+" autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 autocmd FileType javascript let b:surround_36 = "$(\r)"
                         \ | let b:surround_95 = "_(\r)"
 
