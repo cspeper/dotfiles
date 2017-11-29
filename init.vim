@@ -11,6 +11,7 @@ Plugin 'Keithbsmiley/rspec.vim', {'for': 'ruby'}
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'djoshea/vim-autoread'
 Plugin 'janko-m/vim-test'
 Plugin 'jgdavey/vim-blockle'
@@ -177,6 +178,8 @@ autocmd FileType javascript let b:surround_36 = "$(\r)"
 
 let ruby_operators=1
 
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
 runtime macros/matchit.vim
@@ -200,6 +203,8 @@ let g:neoterm_autoscroll = 0
 let g:neoterm_size = 20
 let g:neoterm_fixedsize = 1
 let g:neoterm_open_in_all_tabs = 1
+
+let g:loaded_python3_provider=1
 
 " Vim Test
 let g:test#strategy = 'neoterm'
