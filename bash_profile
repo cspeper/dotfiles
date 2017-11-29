@@ -29,7 +29,6 @@ alias gtx=gitx
 alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
-alias shutupvim="rm /var/tmp/*.swp"
 alias ws="cd ~/workspace"
 alias hpw="cd ~/workspace/homepolish/web"
 alias hpm="cd ~/workspace/homepolish/multipass-ns"
