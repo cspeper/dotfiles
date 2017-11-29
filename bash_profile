@@ -26,6 +26,8 @@ export HISTSIZE=50000
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 alias gitprune="git remote prune origin && git prune"
 alias dails="docker/run spring rails"
