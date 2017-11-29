@@ -30,6 +30,12 @@ alias gut=git
 alias heroky=heroku
 alias ll="ls -alh"
 alias shutupvim="rm /var/tmp/*.swp"
+alias ws="cd ~/workspace"
+alias hpw="cd ~/workspace/homepolish/web"
+alias hpm="cd ~/workspace/homepolish/multipass-ns"
+alias sw="cd ~/workspace/signal/web"
+alias sa="cd ~/workspace/signal/api"
+alias nsdeploy="yarn run build && NSPW=correct-horse-battery-staple yarn run deploy"
 
 if [ -f ~/.profile ]; then
   . ~/.profile
