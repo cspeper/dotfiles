@@ -167,6 +167,8 @@ set sessionoptions-=options
 
 set hls                            " search with highlights by default
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
+inoremap <c-s> <Esc>:w<CR>
+noremap <c-s> :w<CR>
 
 set autowriteall                   " Save when doing various buffer-switching things.
 autocmd BufLeave,FocusLost * silent! wall
