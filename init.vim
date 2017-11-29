@@ -26,7 +26,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
@@ -43,6 +42,7 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -112,6 +112,12 @@ endfunction
 
 autocmd BufWritePre *.* call StripTrailingWhitespace()
 
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = '✘'
+highlight ALEWarningSign ctermfg=Blue
+
 let NERDSpaceDelims = 1
 
 filetype on           " Enable filetype detection
@@ -177,9 +183,6 @@ runtime macros/matchit.vim
 
 highlight clear SignColumn
 call gitgutter#highlight#define_highlights()
-
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-let g:syntastic_javascript_checkers = ['eslint']
 
 command! -bang -nargs=* Find
   \ call fzf#vim#grep(
