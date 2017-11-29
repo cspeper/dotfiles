@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Keithbsmiley/rspec.vim', {'for': 'ruby'}
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
