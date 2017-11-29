@@ -20,6 +20,8 @@ export HISTCONTROL=ignoredups
 export HISTFILESIZE=5000
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 alias gitprune="git remote prune origin && git prune"
 alias gogogo="gpr && bundle && rake db:migrate db:test:prepare"
