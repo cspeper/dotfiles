@@ -46,6 +46,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 
 call vundle#end()
