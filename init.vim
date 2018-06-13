@@ -19,14 +19,15 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kassio/neoterm'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
 Plugin 'mkitt/tabline.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
@@ -43,6 +44,7 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -68,6 +70,7 @@ map <leader>u   :GundoToggle<CR>
 map Y           yg_
 map <MiddleMouse>   <Nop>
 map <MiddleMouse>  <Nop>
+map <C-t>       :tabe<CR>
 
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
@@ -113,6 +116,8 @@ endfunction
 autocmd BufWritePre *.* call StripTrailingWhitespace()
 
 let NERDSpaceDelims = 1
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = ['^.git$','^.idea$','^.bundle$']
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -180,16 +185,9 @@ call gitgutter#highlight#define_highlights()
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '✘'
+" highlight ALEWarningSign ctermfg=Red
 
 command! -bang -nargs=* Find
   \ call fzf#vim#grep(
@@ -216,3 +214,18 @@ let g:test#ruby#runner = 'rspec'
 let g:test#ruby#rspec#executable = 'spring rspec'
 let g:test#ruby#rspec#file_pattern = '_spec\.rb'
 let g:test#runner_commands = ['RSpec']
+
+set inccommand=split
+
+" https://github.com/w0rp/ale#5xii-how-can-i-check-jsx-files-with-both-stylelint-and-eslint
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
+let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linter_aliases = {'jsx': 'css'}
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
