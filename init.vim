@@ -10,10 +10,13 @@ Plugin 'gmarik/vundle'
 Plugin 'Keithbsmiley/rspec.vim', {'for': 'ruby'}
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ap/vim-css-color'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'djoshea/vim-autoread'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'janko-m/vim-test'
 Plugin 'jgdavey/vim-blockle'
+Plugin 'jparise/vim-graphql'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -24,11 +27,13 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mkitt/tabline.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'nvie/vim-flake8'
+Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
+Plugin 'styled-components/vim-styled-components'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -183,11 +188,9 @@ runtime macros/matchit.vim
 highlight clear SignColumn
 call gitgutter#highlight#define_highlights()
 
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-" let g:ale_sign_error = '✘'
-" let g:ale_sign_warning = '✘'
-" highlight ALEWarningSign ctermfg=Red
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '✘'
+highlight ALEWarningSign ctermfg=Red
 
 command! -bang -nargs=* Find
   \ call fzf#vim#grep(
@@ -223,7 +226,7 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 
-let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linters = {'jsx': ['stylelint', 'eslint'], 'ruby': ['ruby', 'rubocop']}
 let g:ale_linter_aliases = {'jsx': 'css'}
 
 let g:prettier#autoformat = 0
