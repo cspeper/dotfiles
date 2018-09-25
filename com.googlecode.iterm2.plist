@@ -134,16 +134,18 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>1412 952 616 174 0 0 3440 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 383 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 152 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>209 126 918 512 0 0 1440 877 </string>
+	<string>858 339 796 473 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 912 810 525 1440 0 2560 1440 </string>
+	<string>1440 -180 1920 1080 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1440 295 810 502 1440 0 2560 1440 </string>
+	<string>0 892 810 525 0 0 3440 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_3467134B-B42C-4950-AD5A-AB80C30453F3</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -958,6 +960,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/bwheeldon/workspace/dotfiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnClose</key>
 	<false/>
 	<key>PromptOnQuit</key>
@@ -979,7 +983,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-14T14:36:20Z</date>
+	<date>2018-07-13T19:32:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1031,6 +1035,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.7</string>
 </dict>
 </plist>
