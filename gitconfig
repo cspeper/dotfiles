@@ -46,3 +46,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
