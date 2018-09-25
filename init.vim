@@ -232,3 +232,5 @@ let g:ale_linter_aliases = {'jsx': 'css'}
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+
+autocmd VimResized * wincmd =
