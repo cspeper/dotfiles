@@ -50,6 +50,9 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'vim-scripts/regreplop.vim'
 Plugin 'w0rp/ale'
+Plugin 'colorizer'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 call vundle#end()
 
@@ -77,6 +80,18 @@ map <MiddleMouse>   <Nop>
 map <MiddleMouse>  <Nop>
 map <C-t>       :tabe<CR>
 
+nnoremap å ggVG<CR>
+nnoremap <leader>d "_d
+
+map <Up>   <C-W>k
+map <Down> <C-W>j
+map <Left> <C-W>h
+map <Right> <C-W>l
+
+nnoremap  <leader>j :ImportJSWord
+nnoremap  <leader>i :ImportJSFix
+nnoremap  <leader>g :ImportJSGoto
+
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
@@ -94,8 +109,11 @@ au FocusLost * silent! wa
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
+let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_enable_elixir_checker = 1
 colorscheme solarized
 
+set shortmess+=A " silence swap file exists error
 set vb    " Silence audio notifications
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -110,6 +128,7 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+set guifont=Monaco:h10
 set notimeout                      " No command timeout
 set showcmd                        " Show typed command prefixes while waiting for operator
 set mouse=a                        " Use mouse support in XTerm/iTerm.
@@ -187,7 +206,7 @@ autocmd FileType fzf tnoremap <buffer> <ESC> <C-c>
 let g:rg_command = 'rg --vimgrep --sort-files'
 
 " NeoTerm
-let g:neoterm_autoinsert = 0
+let g:neoterm_autoinsert = 1
 let g:neoterm_autoscroll = 0
 let g:neoterm_size = 20
 let g:neoterm_fixedsize = 1
