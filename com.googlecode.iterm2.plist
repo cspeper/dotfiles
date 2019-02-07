@@ -95,7 +95,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/workspace/dotfiles</string>
+	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -129,23 +129,10 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>1412 952 616 174 0 0 3440 1417 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 383 620 392 0 0 1440 877 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 152 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>858 339 796 473 0 0 3440 1417 </string>
+	<string>408 272 918 512 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 -180 1920 1080 1440 -180 1920 1080 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 892 810 525 0 0 3440 1417 </string>
+	<string>0 80 1440 797 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_3467134B-B42C-4950-AD5A-AB80C30453F3</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -162,7 +149,7 @@
 			<key>AWDS Tab Option</key>
 			<string>Recycle</string>
 			<key>AWDS Window Directory</key>
-			<string>~/workspace/ezcater/ezcater-delivery</string>
+			<string>~/workspace/ezcater/ez-rails</string>
 			<key>AWDS Window Option</key>
 			<string>Yes</string>
 			<key>Allow Title Reporting</key>
@@ -895,20 +882,18 @@
 			<string>~/workspace/ezcater/ez-rails/</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveUsedCopyMode</key>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>1500ABEC-6891-4776-B9F2-33E960FA7895</string>
+	<string>F07C4D66-7A2B-490E-9FB0-1B30450AC7AE</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>509385381.36794299</real>
+	<real>563835525.40340996</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -959,7 +944,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/bwheeldon/workspace/dotfiles</string>
+	<string>/Users/brentwheeldon/dotfiles</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnClose</key>
@@ -972,18 +957,16 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=13</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=60</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-13T19:32:15Z</date>
+	<date>2018-11-13T21:04:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1035,6 +1018,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.5</string>
 </dict>
 </plist>
