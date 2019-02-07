@@ -26,8 +26,9 @@ alias dails="docker/run spring rails"
 alias dixstructure="git reset db/structure.sql && dails \"db:migrate db:test:prepare\" && git add db/structure.sql && git rebase --continue"
 alias dspec="docker/run spring rspec"
 alias dododo="gpr && docker/run \"bundle && spring stop && spring rails db:migrate db:test:prepare\""
+alias fixit="git add . -A && git commit --amend -CHEAD"
 alias fixstructure="git reset db/structure.sql && sails db:migrate db:test:prepare && git add db/structure.sql && git rebase --continue"
-alias gogogo="gpr && bundle; spring stop; sails db:migrate db:test:prepare"
+alias gogogo="gpr && bundle && spring stop && sails db:migrate db:test:prepare"
 alias got=git
 alias gpr="git fetch && git rebase origin/master"
 alias gtx=gitx
@@ -48,3 +49,4 @@ if [ -f ~/.bash_profile.local ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export GPG_TTY=$(tty)

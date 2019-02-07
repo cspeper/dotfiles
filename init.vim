@@ -32,7 +32,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'sjl/gundo.vim'
 Plugin 'styled-components/vim-styled-components'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
@@ -71,17 +70,11 @@ map <leader>c   :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C   :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
 map <leader>ev  :vsplit $MYVIMRC<cr>
 map <leader>sv  :source $MYVIMRC<cr>
-map <leader>u   :GundoToggle<CR>
+map <leader>l :!rubocop -a %<CR>
 map Y           yg_
 map <MiddleMouse>   <Nop>
 map <MiddleMouse>  <Nop>
 map <C-t>       :tabe<CR>
-
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
 
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -97,7 +90,6 @@ vnoremap <leader>P "+P
 
 au FocusLost * silent! wa
 
-let python_highlight_all=1
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
@@ -108,21 +100,10 @@ set vb    " Silence audio notifications
 autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufReadPost .git/index set nolist
 
-let g:gundo_close_on_revert = 1
-
 autocmd BufRead,BufNewFile *.json set filetype=javascript
-
-function! StripTrailingWhitespace()
-  let save_cursor = getpos(".")
-  %s/\s\+$//e
-  call setpos('.', save_cursor)
-endfunction
-
-autocmd BufWritePre *.* call StripTrailingWhitespace()
 
 let NERDSpaceDelims = 1
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['^.git$','^.idea$','^.bundle$']
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -209,17 +190,6 @@ let g:neoterm_size = 20
 let g:neoterm_fixedsize = 1
 let g:neoterm_open_in_all_tabs = 1
 
-" Vim Test
-let g:test#strategy = 'neoterm'
-
-" Ruby Tests
-let g:test#ruby#runner = 'rspec'
-let g:test#ruby#rspec#executable = 'spring rspec'
-let g:test#ruby#rspec#file_pattern = '_spec\.rb'
-let g:test#runner_commands = ['RSpec']
-
-set inccommand=split
-
 " https://github.com/w0rp/ale#5xii-how-can-i-check-jsx-files-with-both-stylelint-and-eslint
 augroup FiletypeGroup
     autocmd!
@@ -228,6 +198,8 @@ augroup END
 
 let g:ale_linters = {'jsx': ['stylelint', 'eslint'], 'ruby': ['ruby', 'rubocop']}
 let g:ale_linter_aliases = {'jsx': 'css'}
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'] }
+let g:ale_fix_on_save = 1
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
