@@ -37,6 +37,7 @@ alias ll="ls -alh"
 alias shutupvim="rm /var/tmp/*.swp"
 alias sails="spring rails"
 alias sspec="spring rspec"
+alias wipit="git add . && git commit --no-verify -m wip"
 
 if [ -f ~/.profile ]; then
   . ~/.profile
