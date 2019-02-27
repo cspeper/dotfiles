@@ -1,4 +1,10 @@
 ```
+export $MACHINE_NAME=<whatever you want to call your machine>
+sudo scutil --set ComputerName $MACHINE_NAME
+sudo scutil --set LocalHostName $MACHINE_NAME
+sudo scutil --set HostName $MACHINE_NAME
+sudo hostname $MACHINE_NAME
+
 sudo gem install rouge
 brew install neovim bash-completion ctags ripgrep fzf diff-so-fancy
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
