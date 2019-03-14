@@ -1,5 +1,5 @@
 ```
-export $MACHINE_NAME=<whatever you want to call your machine>
+export MACHINE_NAME=<whatever you want to call your machine>
 sudo scutil --set ComputerName $MACHINE_NAME
 sudo scutil --set LocalHostName $MACHINE_NAME
 sudo scutil --set HostName $MACHINE_NAME
