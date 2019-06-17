@@ -206,3 +206,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 
 autocmd VimResized * wincmd =
+
+" Local config
+if filereadable($HOME . "/.config/nvim/local.vim")
+  source ~/.config/nvim/local.vim
+endif
