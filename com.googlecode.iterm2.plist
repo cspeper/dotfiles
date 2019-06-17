@@ -129,10 +129,15 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>408 272 918 512 0 0 3440 1417 </string>
+	<string>271 289 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 80 1440 797 0 0 1440 877 </string>
+	<string>0 80 1680 947 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_3467134B-B42C-4950-AD5A-AB80C30453F3</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -149,7 +154,7 @@
 			<key>AWDS Tab Option</key>
 			<string>Recycle</string>
 			<key>AWDS Window Directory</key>
-			<string>~/workspace/ezcater/ez-rails</string>
+			<string>~/workspace/github</string>
 			<key>AWDS Window Option</key>
 			<string>Yes</string>
 			<key>Allow Title Reporting</key>
@@ -879,21 +884,21 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>~/workspace/ezcater/ez-rails/</string>
+			<string></string>
 		</dict>
 	</array>
-	<key>NoSyncHaveRequestedFullDiskAccess</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>F07C4D66-7A2B-490E-9FB0-1B30450AC7AE</string>
+	<string>10CE6D61-6C4B-4D3B-A235-E7D0BFE3F3BA</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>563835525.40340996</real>
+	<real>574106500.468871</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -944,7 +949,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/brentwheeldon/dotfiles</string>
+	<string>/Users/brent/dotfiles</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnClose</key>
@@ -962,11 +967,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=60</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=58</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-13T21:04:11Z</date>
+	<date>2019-03-18T12:01:40Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1018,6 +1023,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.5</string>
+	<string>3.2.7</string>
 </dict>
 </plist>
