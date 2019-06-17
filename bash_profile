@@ -11,13 +11,18 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+shopt -s histappend
+PROMPT_COMMAND="history -a"
+
 export CLICOLOR=1
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_DEFAULT_OPTS='--preview="rougify -t monokai.sublime {}"'
 export GPG_TTY=$(tty)
 export HISTCONTROL=ignoredups
-export HISTFILESIZE=5000
+export HISTFILESIZE=50000
+export HISTSIZE=50000
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
 
