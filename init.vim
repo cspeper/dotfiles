@@ -66,8 +66,8 @@ map \|          :NERDTreeFind<CR>
 map <D-N>       :Files<CR>
 map <leader>f   :Files<CR>
 map <leader>/   <plug>NERDCommenterToggle
-map <leader>c   :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
-map <leader>C   :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
+map <leader>c   :let @* = fnamemodify(expand("%"), ":~:.")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":~:.")<CR>
+map <leader>C   :let @* = fnamemodify(expand("%"), ":~:.").":".line(".")<CR>:echo "Copied: ".fnamemodify(expand("%"), ":~:.").":".line(".")<CR>
 map <leader>ev  :vsplit $MYVIMRC<cr>
 map <leader>sv  :source $MYVIMRC<cr>
 map <leader>l :!rubocop -a %<CR>
