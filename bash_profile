@@ -40,6 +40,7 @@ export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;33m\]\$(parse_git_branch)\[\e[0m\]\[\e[00;37m\]\$ \[\e[0m\]"
 export NVM_DIR=~/.nvm
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 alias gitprune="git remote prune origin && git prune"
 alias dails="docker/run spring rails"
@@ -82,6 +83,10 @@ alias zerver="zeus s"
 alias zonsole="zeus c"
 alias zspec="zeus rspec"
 alias ctags="`brew --prefix`/bin/ctags"
+
+if [ -f ./.env ]; then
+  source_env
+fi
 
 if [ -f ~/.profile ]; then
   . ~/.profile
